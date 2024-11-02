@@ -1,0 +1,130 @@
+<html>
+	<head>
+		<style>
+		*{
+			box-sizing: border-box;
+		}
+		
+		body{
+			background:#F0E68C;
+		}
+		
+		.container{
+			background: #8FBC8F;
+			display: grid;
+			gap: 10px;
+			grid-template:
+				"header header header" auto
+				"sidebar1 content sidebar2" 1fr
+				"footer footer footer" auto
+			
+		}
+		
+		.item{
+			background: #e8e8e8;
+			text-align: center;
+			border: 0.5px solid #000;
+		}
+		
+		.header{
+			grid-area:header;
+			font-family: sans-serif;
+			font-size: 36px;
+			font-weight: bold;
+			color:#556B2F;
+			display: flex; /* Use flexbox for the header */
+            justify-content: space-between; /* Space menu and login */
+            align-items: center; /* Center items vertically */
+            padding: 0 10px; /* Add padding for aesthetics */
+		}
+		
+		.menu(
+			display: flex;
+		}
+		
+		.menu a{
+			margin-right: 15px;
+			text-decoration: none;
+			color: #000;
+		}
+		
+		.login{
+			align-self: center;
+			
+		
+		.sidebar1{
+			justify-self: start;
+			grid-area: sidebar1;
+			width: 20%;
+		}
+		
+		.content{
+			justify-self: center;
+			grid-area: content;
+			width: 60%
+		}
+		
+		.sidebar2{
+			justify-self:end;
+			grid-area: sidebar2;
+			width: 20%;
+		}
+		
+		.footer{
+			grid-area: footer;
+		}
+		
+		@Media (max-width: 40rem){
+			.sidebar1,
+			.sidebar2{
+				display: none;
+			}
+
+		
+		.container{
+			grid-template-columns: 100%;
+			grid-template-areas:
+				"header"
+				"content"
+				"footer";
+		}
+	}
+		
+		
+			</style>
+	</head>
+	<body>
+		<body class="container">
+		<div class="container">
+			<a href="#" class="item">Home </a>
+			<a href="#" class="item">About</a>
+			<a href="#" class="item">Products</a>
+			<a href="#" class="item">Policy</a>
+			<a href="#" class="last-item">Contact Us</a>
+		</div>
+		
+         <div class="login">
+            <a href="#">Login</a> 
+         </div>
+		<div class="item header">
+			<p>Jacobsen Web Design</p>
+		 </div>
+		
+		<div class="item content">
+		  <p>Content</p>
+		 </div>
+		 
+		 <div class="item sidebar1">
+		  <p>Sidebar 1</p>
+		 </div>
+		 
+		 <div class="item sidebar2">
+		  <p>Sidebar 2</p>
+		 </div>
+		 
+		 <div class="item footer">
+		  <p>Footer</p>
+		 </div>
+		 
+	</body>
+</html>
