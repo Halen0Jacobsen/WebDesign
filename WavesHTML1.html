@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ocean Wave Header</title>
+    <style>
+        /* Basic Reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* The Hero Header */
+        .header {
+            position: relative;
+            text-align: center;
+            /* Gradient: Sand at the bottom, Deep Water at the top */
+            background: linear-gradient(0deg, rgba(225,198,153,1) 0%, rgba(43,156,181,1) 50%, rgba(28,95,138,1) 100%);
+            color: white;
+            height: 65vh; /* Adjust height as needed */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .inner-header {
+            height: 100%;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .inner-header h1 {
+            font-weight: 300;
+            letter-spacing: 5px;
+            font-size: 3rem;
+            text-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+            z-index: 10;
+        }
+
+        /* Wave Container */
+        .waves-wrapper {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 150px; /* Height of the waves */
+            min-height: 100px;
+            max-height: 150px;
+        }
+
+        .waves {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            margin-bottom: -7px; /* Fix for safari gap */
+        }
+
+        /* Animation Classes */
+        .parallax > use {
+            animation: move-forever 25s cubic-bezier(.55,.5,.45,.5) infinite;
+        }
+        .parallax > use:nth-child(1) {
+            animation-delay: -2s;
+            animation-duration: 7s;
+        }
+        .parallax > use:nth-child(2) {
+            animation-delay: -3s;
+            animation-duration: 10s;
+        }
+        .parallax > use:nth-child(3) {
+            animation-delay: -4s;
+            animation-duration: 13s;
+        }
+        .parallax > use:nth-child(4) {
+            animation-delay: -5s;
+            animation-duration: 20s;
+        }
+
+        @keyframes move-forever {
+            0% { transform: translate3d(-90px, 0, 0); }
+            100% { transform: translate3d(85px, 0, 0); }
+        }
+
+        /* Content below the header (The "Fade to White" landing zone) */
+        .content {
+            height: 40vh;
+            background-color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .content p {
+            color: #555;
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Responsive height for mobile */
+        @media (max-width: 768px) {
+            .waves-wrapper { height: 60px; min-height: 60px; }
+            .header { height: 40vh; }
+            .inner-header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="inner-header">
+            <h1>COASTLINE</h1>
+        </div>
+
+        <div class="waves-wrapper">
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+                <defs>
+                    <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+                </defs>
+                <g class="parallax">
+                    <use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7)" />
+                    <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+                    <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+                    <use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+                </g>
+            </svg>
+        </div>
+    </div>
+
+    <section class="content">
+        <h2>The Shoreline</h2>
+        <p>The waves crash against the sand and wash away, leaving a clean, minimal white canvas for your content below.</p>
+    </section>
+
+</body>
+</html>
